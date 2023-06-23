@@ -43,36 +43,21 @@ echo ""
 echo "Checking OS Compatability"
 echo ""
 if [[ $(cat /etc/os-release|grep "raspbian") ]]; then
-  if [[ $(cat /etc/os-release|grep "stretch") ]]; then
-    osversion="Raspbian Stretch"
-    echo ""
-    echo "You are running the installer on Stretch="
-    echo ""
-  elif [[ $(cat /etc/os-release|grep "buster") ]]; then
+  if [[ $(cat /etc/os-release|grep "buster") ]]; then
     osversion="Raspbian Buster"
     echo ""
     echo "You are running the installer on Buster"
     echo ""
-  elif [[ $(cat /etc/os-release|grep "bullseye") ]]; then
-    osversion="Raspbian Bullseye"
-    echo ""
-    echo "You are running the installer on Bullseye"
-    echo ""
   else
     osversion="Other Raspbian"
     echo ""
-    echo "You are advised to use the Stretch or Buster or Bullseye version of the OS"
+    echo "You are advised to use the Buster version of the OS"
     echo "Exiting the installer="
     echo ""
     exit 1
   fi
 elif [[ $(cat /etc/os-release|grep "armbian") ]]; then
-  if [[ $(cat /etc/os-release|grep "stretch") ]]; then
-    osversion="Armbian Stretch"
-    echo ""
-    echo "You are running the installer on Stretch"
-    echo ""
-  elif [[ $(cat /etc/os-release|grep "buster") ]]; then
+  if [[ $(cat /etc/os-release|grep "buster") ]]; then
     osversion="Armbian Buster"
     echo ""
     echo "You are running the installer on Buster"
