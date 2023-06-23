@@ -1,5 +1,6 @@
 {
   "Version":{
+    "OS":Buster,
     "SDK":061,
     "Features":038,
     "Revision":007
