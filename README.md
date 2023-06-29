@@ -11,13 +11,15 @@ This project is used  for fun and experimental/educational only.
 
 There is no goal to harm the author of this project. 
 
-## Support of Bullseye
+## Support of Stable Buster and Bullseye
 
-#### git clone git clone https://github.com/nayan1255/Google-Assistant -b stable/bullseye
+#### git clone git clone https://github.com/nayan1255/Google-Assistant
 
-## Currently Working on Buster and Bookworm
+## Currently Working on Buster, Bullseye and Bookworm
 
 #### git clone https://github.com/nayan1255/Google-Assistant -b unstable/buster
+
+#### git clone https://github.com/nayan1255/Google-Assistant -b unstable/bullseye
 
 #### git clone https://github.com/nayan1255/Google-Assistant -b unstable/bookworm
 
