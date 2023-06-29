@@ -35,7 +35,7 @@ echo ""
 
 
 sudo apt-get update -y
-sed 's/#.*//' ${GIT_DIR}/Requirements/GassistPi-system-requirements.txt | xargs sudo apt-get install -y
+sed 's/#.*//' ${GIT_DIR}/Requirements/system-requirements.txt | xargs sudo apt-get install -y
 
 
 #Check OS Version
@@ -61,11 +61,6 @@ elif [[ $(cat /etc/os-release|grep "armbian") ]]; then
     osversion="Armbian Buster"
     echo ""
     echo "You are running the installer on Buster"
-    echo ""
-  elif [[ $(cat /etc/os-release|grep "bullseye") ]]; then
-    osversion="Armbian Bullseye"
-    echo ""
-    echo "You are running the installer on Bullseye"
     echo ""
   else
     osversion="Other Armbian"
@@ -145,7 +140,7 @@ python3 -m venv env
 env/bin/python -m pip install --upgrade pip setuptools wheel
 source env/bin/activate
 
-pip install -r ${GIT_DIR}/Requirements/GassistPi-pip-requirements.txt
+pip install -r ${GIT_DIR}/Requirements/pip-requirements.txt
 pip install git+https://github.com/shivasiddharth/pafy.git
 
 if [[ $board = "Raspberry" ]] && [[ $osversion != "OSMC Stretch" ]];then
@@ -201,4 +196,4 @@ echo ""
 echo "Finished installing Google Assistant......."
 echo ""
 echo ""
-echo "Please reboot........"
+echo "Please reboot your system........"
