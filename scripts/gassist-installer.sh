@@ -1,5 +1,5 @@
 #!/bin/bash
-# Copyright 2017 Google Inc.
+# Copyright 2017-2023 Google Inc.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -43,17 +43,7 @@ echo ""
 echo "Checking OS Compatability"
 echo ""
 if [[ $(cat /etc/os-release|grep "raspbian") ]]; then
-  if [[ $(cat /etc/os-release|grep "stretch") ]]; then
-    osversion="Raspbian Stretch"
-    echo ""
-    echo "You are running the installer on Stretch="
-    echo ""
-  elif [[ $(cat /etc/os-release|grep "buster") ]]; then
-    osversion="Raspbian Buster"
-    echo ""
-    echo "You are running the installer on Buster"
-    echo ""
-  elif [[ $(cat /etc/os-release|grep "bullseye") ]]; then
+  if [[ $(cat /etc/os-release|grep "bullseye") ]]; then
     osversion="Raspbian Bullseye"
     echo ""
     echo "You are running the installer on Bullseye"
@@ -61,23 +51,13 @@ if [[ $(cat /etc/os-release|grep "raspbian") ]]; then
   else
     osversion="Other Raspbian"
     echo ""
-    echo "You are advised to use the Stretch or Buster or Bullseye version of the OS"
+    echo "You are advised to use the Bullseye version of the OS"
     echo "Exiting the installer="
     echo ""
     exit 1
   fi
 elif [[ $(cat /etc/os-release|grep "armbian") ]]; then
-  if [[ $(cat /etc/os-release|grep "stretch") ]]; then
-    osversion="Armbian Stretch"
-    echo ""
-    echo "You are running the installer on Stretch"
-    echo ""
-  elif [[ $(cat /etc/os-release|grep "buster") ]]; then
-    osversion="Armbian Buster"
-    echo ""
-    echo "You are running the installer on Buster"
-    echo ""
-  elif [[ $(cat /etc/os-release|grep "bullseye") ]]; then
+  if [[ $(cat /etc/os-release|grep "bullseye") ]]; then
     osversion="Armbian Bullseye"
     echo ""
     echo "You are running the installer on Bullseye"
@@ -85,7 +65,7 @@ elif [[ $(cat /etc/os-release|grep "armbian") ]]; then
   else
     osversion="Other Armbian"
     echo ""
-    echo "You are advised to use the Stretch version of the OS"
+    echo "You are advised to use the Bullseye version of the OS"
     echo "Exiting the installer="
     echo ""
     exit 1
@@ -161,7 +141,7 @@ env/bin/python -m pip install --upgrade pip setuptools wheel
 source env/bin/activate
 
 pip install -r ${GIT_DIR}/Requirements/GassistPi-pip-requirements.txt
-pip install git+https://github.com/shivasiddharth/pafy.git
+pip install git+https://github.com/nayan1255/pafy.git
 
 if [[ $board = "Raspberry" ]] && [[ $osversion != "OSMC Stretch" ]];then
 	pip install RPi.GPIO==0.7.1a4
