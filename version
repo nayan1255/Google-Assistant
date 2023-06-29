@@ -1,7 +1,8 @@
 {
   "Version":{
+    "OS":Bullseye,
     "SDK":061,
     "Features":038,
-    "Revision":007
+    "Revision":008
   }
 }
