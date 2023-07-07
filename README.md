@@ -13,7 +13,7 @@ There is no goal to harm the author of this project.
 
 ## Support of Stable Buster and Bullseye
 
-#### git clone git clone https://github.com/nayan1255/Google-Assistant
+#### git clone https://github.com/nayan1255/Google-Assistant
 
 ## Currently Working on Buster, Bullseye and Bookworm under Development
 
